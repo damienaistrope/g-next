@@ -1,0 +1,38 @@
+## macOS
+.DS_Store
+
+## Node
+node_modules/
+dist/
+build/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+## Environment
+.env
+.env.local
+.env.*.local
+
+## Editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+## Build artifacts and archives
+*.dmg
+*.zip
+G-Next.app/
+tmp_dmg_src/
+
+## Public installer files
+public/G-Next_macOS_Installer.dmg
+public/G-Next.app/
+
+## Misc
+.DS_Store
+dist/

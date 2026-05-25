@@ -1,0 +1,6 @@
+{
+  "name": "G→Next Workspace",
+  "description": "Premium macOS Sonoma productivity app representing G→Next with distraction-free views, pro feature shortcuts, iCloud sync, and DMG installer distribution helper.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

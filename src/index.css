@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Compact", "Helvetica Neue", sans-serif;
+  --font-mono: "SF Mono", "SFProMono-Regular", "SF Mono All", "JetBrains Mono", Menlo, monospace;
+}
