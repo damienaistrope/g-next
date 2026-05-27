@@ -1,6 +1,163 @@
 @import "tailwindcss";
+@import "./styles/tokens.css";
 
 @theme {
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Compact", "Helvetica Neue", sans-serif;
-  --font-mono: "SF Mono", "SFProMono-Regular", "SF Mono All", "JetBrains Mono", Menlo, monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+
+  /* Custom elegant thin dark scrollbars */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', 'Material Icons', sans-serif !important;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Physical edge warping and organic liquid-like distortion of specimens with active energy */
+  /* State 2: Listening - Organic breathing / pulsating corners */
+  @keyframes energyListening {
+    0%, 100% {
+      border-radius: var(--edge-br);
+      transform: scale(1.0);
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95) calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95);
+      transform: scale(calc(1 + var(--intensity) * 0.005));
+    }
+  }
+
+  /* State 3: Responding - Communicative slow asymmetric change */
+  @keyframes energyResponding {
+    0%, 100% {
+      border-radius: var(--edge-br);
+      transform: scale(1.0);
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.08) calc(var(--edge-br) * 0.92) calc(var(--edge-br) * 0.95) calc(var(--edge-br) * 1.05);
+      transform: scale(calc(1 + var(--intensity) * 0.008));
+    }
+  }
+
+  /* State 4: Processing - Slow circulating corner adjustments */
+  @keyframes energyProcessing {
+    0%, 100% {
+      border-radius: calc(var(--edge-br) * 1.03) calc(var(--edge-br) * 0.97) calc(var(--edge-br) * 1.03) calc(var(--edge-br) * 0.97);
+      transform: scale(1.0);
+    }
+    25% {
+      border-radius: calc(var(--edge-br) * 0.97) calc(var(--edge-br) * 1.03) calc(var(--edge-br) * 0.98) calc(var(--edge-br) * 1.02);
+      transform: scale(calc(1 + var(--intensity) * 0.004));
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.02) calc(var(--edge-br) * 0.98) calc(var(--edge-br) * 0.97) calc(var(--edge-br) * 1.03);
+      transform: scale(1.0);
+    }
+    75% {
+      border-radius: calc(var(--edge-br) * 0.98) calc(var(--edge-br) * 1.02) calc(var(--edge-br) * 1.03) calc(var(--edge-br) * 0.97);
+      transform: scale(calc(1 - var(--intensity) * 0.003));
+    }
+  }
+
+  /* State 5: Anticipating - Slow soft swell */
+  @keyframes energyAnticipating {
+    0%, 100% {
+      border-radius: var(--edge-br);
+      transform: scale(1.0);
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.1) calc(var(--edge-br) * 0.9) calc(var(--edge-br) * 0.9) calc(var(--edge-br) * 1.1);
+      transform: scale(calc(1 + var(--intensity) * 0.008));
+    }
+  }
+
+  /* Keep legacy anims as fallback and map classes */
+  @keyframes energyDynamicActive {
+    0%, 100% {
+      border-radius: var(--edge-br);
+      transform: scale(1.0);
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95) calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95);
+      transform: scale(calc(1 + var(--intensity) * 0.005));
+    }
+  }
+
+  @keyframes energyHighFrequency {
+    0%, 100% {
+      border-radius: var(--edge-br);
+      transform: scale(1.0);
+    }
+    50% {
+      border-radius: calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95) calc(var(--edge-br) * 1.05) calc(var(--edge-br) * 0.95);
+      transform: scale(calc(1 + var(--intensity) * 0.005));
+    }
+  }
+
+  .energy-edge-listening {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyListening 6s infinite ease-in-out;
+  }
+
+  .energy-edge-responding {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyResponding 5s infinite ease-in-out;
+  }
+
+  .energy-edge-processing {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyProcessing 7s infinite ease-in-out;
+  }
+
+  .energy-edge-anticipating {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyAnticipating 8s infinite ease-in-out;
+  }
+
+  .energy-edge-dynamic-active {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyDynamicActive 6s infinite ease-in-out;
+  }
+
+  .energy-edge-high-frequency {
+    filter: url(#m3-energy-warp-filter);
+    animation: energyHighFrequency 6s infinite ease-in-out;
+  }
+}
+
+/* ── Google Sans Flex Variable ── */
+/* Loaded via @fontsource-variable/google-sans-flex in main.tsx */
+/* Applied to all M3 components */
+[class*="md-"] {
+  font-family: 'Google Sans Flex Variable', 'Google Sans Flex', system-ui, sans-serif;
 }

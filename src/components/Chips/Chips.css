@@ -1,0 +1,148 @@
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-s, 8px); /* M3 chip corner radius */
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: 500;
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  gap: 8px;
+  transition: background-color 200ms cubic-bezier(0.2, 0, 0, 1), border-color 200ms cubic-bezier(0.2, 0, 0, 1), box-shadow 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1);
+  white-space: nowrap;
+  outline: none;
+}
+
+.md-chip--has-leading {
+  padding-left: 8px;
+}
+
+.md-chip--has-trailing {
+  padding-right: 8px;
+}
+
+.md-chip__state-layer {
+  position: absolute;
+  inset: 0;
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+}
+
+.md-chip:hover .md-chip__state-layer {
+  opacity: 0.08;
+}
+
+.md-chip:focus-visible {
+  border-color: var(--md-sys-color-on-surface);
+}
+
+.md-chip:focus-visible .md-chip__state-layer {
+  opacity: 0.12;
+}
+
+.md-chip:active .md-chip__state-layer {
+  opacity: 0.12;
+}
+
+.md-chip--selected {
+  background-color: var(--md-sys-color-secondary-container);
+  border-color: transparent;
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-chip--selected .md-chip__state-layer {
+  background-color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-chip__icon--checkmark {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 14px !important;
+}
+
+.md-chip__icon--trailing {
+  font-size: 18px !important;
+  margin-left: -4px;
+}
+
+.md-chip__icon, .md-chip__remove {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.md-chip__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: text;
+}
+
+.md-chip--disabled {
+  opacity: 0.38;
+  pointer-events: none;
+  border-color: var(--md-sys-color-on-surface);
+}
+
+/* Premium dynamic chip variants matching Google Material 3 specs */
+.md-chip--assist, .md-chip--suggestion {
+  background-color: transparent;
+  border: 1px solid var(--md-sys-color-outline-variant, #E0E2EC);
+  color: var(--md-sys-color-on-surface-variant, #43474E);
+}
+
+.md-chip--filter {
+  background-color: transparent;
+  border: 1px solid var(--md-sys-color-outline-variant, #E0E2EC);
+  color: var(--md-sys-color-on-surface-variant, #43474E);
+}
+
+.md-chip--filter.md-chip--selected {
+  background-color: var(--md-sys-color-secondary-container, #D3E4FF);
+  color: var(--md-sys-color-on-secondary-container, #001C38);
+  border-color: transparent;
+}
+
+.md-chip--input {
+  background-color: var(--md-sys-color-surface, transparent);
+  border: 1px solid var(--md-sys-color-outline, #79747E);
+  color: var(--md-sys-color-on-surface, #1A1C1E);
+}
+
+.md-chip--filled {
+  background-color: var(--md-sys-color-surface-container-highest, #E2E2E9);
+  color: var(--md-sys-color-on-surface-variant, #43474E);
+  border-color: transparent;
+}
+
+.md-chip--filled.md-chip--selected {
+  background-color: var(--md-sys-color-secondary-container, #D3E4FF);
+  color: var(--md-sys-color-on-secondary-container, #001C38);
+}
+
+.md-chip--elevated {
+  background-color: var(--md-sys-color-surface-container-low, #F3F3FA);
+  color: var(--md-sys-color-on-surface-variant, #43474E);
+  border-color: transparent;
+  box-shadow: var(--md-sys-elevation-1, 0px 1px 3px 1px rgba(0,0,0,0.15));
+}
+
+.md-chip--elevated:hover {
+  box-shadow: var(--md-sys-elevation-2, 0px 2px 6px 2px rgba(0,0,0,0.15));
+}

@@ -1,0 +1,118 @@
+.md-split-button {
+  display: inline-flex;
+  align-items: stretch;
+  position: relative;
+  /* Reset button defaults that might interfere */
+}
+
+/* Base Dimensions */
+.md-split-button--xs { height: 32px; --_b-radius: 4px; }
+.md-split-button--s { height: 36px; --_b-radius: 4px; }
+.md-split-button--m { height: 40px; --_b-radius: 4px; }
+.md-split-button--l { height: 48px; --_b-radius: 8px; }
+.md-split-button--xl { height: 56px; --_b-radius: 12px; }
+
+.md-split-button__inner {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+}
+
+.md-split-button .md-button {
+  height: 100% !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  position: relative;
+  /* Use explicit radius variables passed from JS */
+  border-radius: var(--md-button-radius) !important;
+  transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 400ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* State Layer & Ripple Fixes */
+.md-split-button .md-button__state-layer,
+.md-split-button .md-ripple,
+.md-split-button .md-ripple__circle {
+  border-radius: inherit !important;
+}
+
+/* Secondary Button Layout */
+.md-split-button__secondary {
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+}
+
+.md-split-button__secondary .md-button__icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.md-split-button__main {
+  flex: 1 !important;
+  justify-content: center !important;
+  padding-right: 8px !important; /* Counterbalance the missing gap space */
+}
+
+/* Padding based on size */
+.md-split-button--xs .md-split-button__main { padding: 0 12px !important; font-size: 14px !important; }
+.md-split-button--s .md-split-button__main  { padding: 0 14px !important; font-size: 14px !important; }
+.md-split-button--m .md-split-button__main  { padding: 0 16px !important; font-size: 14px !important; }
+.md-split-button--l .md-split-button__main  { padding: 0 20px !important; font-size: 16px !important; }
+.md-split-button--xl .md-split-button__main { padding: 0 24px !important; font-size: 18px !important; }
+
+/* Morph States */
+.md-split-button--menu-open .md-split-button__secondary.md-button {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+.md-split-button--elevated.md-split-button--menu-open .md-split-button__secondary.md-button {
+  background-color: var(--md-sys-color-primary-container) !important;
+  color: var(--md-sys-color-on-primary-container) !important;
+}
+
+/* Menu Container */
+.md-split-button__menu-container {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 101;
+}
+
+.md-split-button__menu-override {
+  min-width: 150px !important;
+  border-radius: 12px !important;
+}
+
+/* Variant Overrides */
+.md-split-button--elevated .md-button {
+  background-color: var(--md-sys-color-surface-container-low) !important;
+  box-shadow: var(--md-sys-elevation-1) !important;
+}
+.md-split-button--elevated:hover .md-button {
+  background-color: var(--md-sys-color-surface-container) !important;
+  box-shadow: var(--md-sys-elevation-2) !important;
+}
+
+.md-split-button--outlined .md-button {
+  border: 1px solid var(--md-sys-color-outline) !important;
+}
+
+.md-split-button--disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}

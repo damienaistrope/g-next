@@ -1,0 +1,10 @@
+.md-dialog-root { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 24px; }
+.md-dialog-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.4); }
+.md-dialog { position: relative; width: 100%; max-width: 560px; max-height: calc(100vh - 48px); background-color: var(--md-sys-color-surface-container-high); border-radius: 28px; box-shadow: var(--md-sys-elevation-3); overflow: hidden; z-index: 2001; display: flex; flex-direction: column; }
+.md-dialog--static { position: relative; width: 312px; max-width: 100%; z-index: 1; margin: 0 auto; display: block; }
+.md-dialog__container { display: flex; flex-direction: column; min-height: 0; flex: 1; }
+.md-dialog__container--centered { align-items: center; text-align: center; }
+.md-dialog__icon { margin-top: 24px; color: var(--md-sys-color-secondary); }
+.md-dialog__title { font-family: var(--md-sys-typescale-headline-small-font, 'Google Sans Flex Variable', system-ui, sans-serif); font-size: var(--md-sys-typescale-headline-small-size); line-height: var(--md-sys-typescale-headline-small-line-height); font-weight: var(--md-sys-typescale-headline-small-weight); letter-spacing: -0.01em; color: var(--md-sys-color-on-surface); padding: 24px 24px 16px; margin: 0; width: 100%; }
+.md-dialog__content { font-family: var(--md-sys-typescale-body-medium-font, 'Google Sans Flex Variable', system-ui, sans-serif); font-size: var(--md-sys-typescale-body-medium-size); line-height: var(--md-sys-typescale-body-medium-line-height); color: var(--md-sys-color-on-surface-variant); padding: 0 24px; margin: 0; overflow-y: auto; flex: 1; }
+.md-dialog__actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 16px 24px; width: 100%; font-family: var(--md-sys-typescale-label-large-font, 'Google Sans Flex Variable', system-ui, sans-serif); }

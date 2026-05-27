@@ -1,0 +1,3 @@
+.md-tooltip-container { position: relative; display: inline-block; }
+.md-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-8px); background-color: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface); padding: 4px 8px; min-height: 24px; display: flex; align-items: center; border-radius: var(--md-sys-shape-xs); font-size: var(--md-sys-typescale-label-small-size); font-weight: 500; white-space: nowrap; pointer-events: none; z-index: 6000; }
+.md-tooltip--static { position: relative; bottom: auto; left: auto; transform: none; display: inline-flex; }

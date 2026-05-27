@@ -1,0 +1,3 @@
+.md-bottom-app-bar { height: 80px; background-color: var(--md-sys-color-surface-container); color: var(--md-sys-color-on-surface); display: flex; align-items: center; padding: 0 4px; width: 100%; }
+.md-bottom-app-bar__actions { display: flex; align-items: center; padding: 0 12px; gap: 8px; flex: 1; }
+.md-bottom-app-bar__fab { margin-right: 16px; margin-left: 16px; }

@@ -1,0 +1,5 @@
+.md-image-grid { display: grid; grid-template-columns: repeat(var(--md-image-grid-cols,3),1fr); gap: 4px; width: 100%; border-radius: var(--md-sys-shape-l); overflow: hidden; }
+.md-image-grid-item { position: relative; aspect-ratio: 1/1; overflow: hidden; background-color: var(--md-sys-color-surface-variant); }
+.md-image-grid-item__image { width: 100%; height: 100%; object-fit: cover; }
+.md-image-grid-item--span-large { grid-column: span 2; grid-row: span 2; }
+.md-image-grid-item--span-wide { grid-column: span 2; }

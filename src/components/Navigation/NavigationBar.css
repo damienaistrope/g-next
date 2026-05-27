@@ -1,0 +1,7 @@
+.md-navigation-bar { height: 80px; background-color: var(--md-sys-color-surface-container); display: flex; align-items: center; justify-content: space-around; padding: 0 8px; position: sticky; bottom: 0; width: 100%; box-shadow: var(--md-sys-elevation-2); z-index: 1000; }
+.md-navigation-bar__item { flex: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: transparent; border: none; cursor: pointer; color: var(--md-sys-color-on-surface-variant); transition: color 200ms cubic-bezier(0.2,0,0,1); position: relative; }
+.md-navigation-bar__icon-container { position: relative; width: 64px; height: 32px; display: flex; align-items: center; justify-content: center; }
+.md-navigation-bar__active-indicator { position: absolute; top: 0; left: 0; width: 64px; height: 32px; background-color: var(--md-sys-color-secondary-container); border-radius: var(--md-sys-shape-full); }
+.md-navigation-bar__item--active { color: var(--md-sys-color-on-surface); }
+.md-navigation-bar__icon { position: relative; z-index: 1; height: 32px; display: flex; align-items: center; justify-content: center; }
+.md-navigation-bar__label { font-size: var(--md-sys-typescale-label-medium-size); font-weight: 500; z-index: 1; }

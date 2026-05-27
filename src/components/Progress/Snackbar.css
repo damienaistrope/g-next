@@ -1,0 +1,7 @@
+.md-snackbar { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 10000; min-width: 344px; }
+.md-snackbar__container { background-color: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface); border-radius: 4px; padding: 0 4px 0 16px; min-height: 48px; display: flex; align-items: center; box-shadow: var(--md-sys-elevation-3); gap: 8px; }
+.md-snackbar__content { flex: 1; padding: 14px 0; }
+.md-snackbar__label { font-size: var(--md-sys-typescale-body-medium-size); }
+.md-snackbar__actions { display: flex; align-items: center; gap: 4px; }
+.md-snackbar__close-button { background: none; border: none; color: var(--md-sys-color-inverse-on-surface); cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.md-snackbar--static { position: relative; bottom: auto; left: auto; transform: none; }

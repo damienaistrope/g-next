@@ -1,53 +1,58 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+export interface ShaderStateConfig {
+  shaderCode: string;
+  primaryColorHex: string;
+  secondaryColorHex: string;
+  scale: number;
+  speed: number;
+}
 
-export interface Task {
+export interface InteractionStates {
+  listening: ShaderStateConfig;
+  responding: ShaderStateConfig;
+  processing: ShaderStateConfig;
+  anticipating: ShaderStateConfig;
+}
+
+export interface ShaderPreset {
   id: string;
   title: string;
-  subtitle?: string;
-  notes?: string;
-  completed: boolean;
-  listId: string;
-  startTime?: string; // HH:MM
-  duration?: number; // duration in minutes
-  priority: 'low' | 'medium' | 'high';
-  timeSpent: number; // in seconds
-  estimatedMinutes?: number;
-  dueDate?: string; // YYYY-MM-DD
-  isSnoozed?: boolean;
+  description: string;
+  author: 'system' | 'ai' | 'user' | 'api';
+  // Standard preset code
+  shaderCode: string;
+  primaryColorHex: string;
+  secondaryColorHex: string;
+  suggestedScale: number;
+  suggestedSpeed: number;
+  // State specific overrides
+  states?: InteractionStates;
 }
 
-export interface CalendarEvent {
-  id: string;
-  title: string;
-  startTime: string; // ISO string or simple time like '2026-05-23T14:00:00'
-  endTime: string;
-  category: 'Work' | 'Personal' | 'Workspace Sync';
-  color: string;
-  location?: string;
-  notes?: string;
-}
+export type ComponentLayerType = 'frame' | 'button' | 'card' | 'badge' | 'text';
 
-export interface ListType {
+export interface FigmaComponent {
   id: string;
   name: string;
-  color: string; // tailwind color class prefix (e.g., 'blue', 'orange')
-  iconName: string; // lucide icon name
+  type: ComponentLayerType;
+  width: number;
+  height: number;
+  borderRadius: number;
+  padding: number;
+  backgroundColor: string;
+  textColor: string;
+  hasShaderBg: boolean;
+  shaderId: string;
+  shaderIntensity: number; // opacity of shader background (0 to 1)
+  shaderBlendMode: 'normal' | 'multiply' | 'screen' | 'overlay' | 'difference';
+  text: string;
+  iconName?: string;
+  hasHoverEffect: boolean;
+  activeState: 'listening' | 'responding' | 'processing' | 'anticipating';
 }
 
-export interface KeyboardShortcut {
-  id: string;
-  name: string;
-  key: string;
-  ctrlKey: boolean;
-  metaKey: boolean; // Cmd on Mac
-  altKey: boolean;  // Option on Mac
-  shiftKey: boolean;
-}
-
-export interface CloudSyncState {
-  status: 'synced' | 'syncing' | 'error' | 'offline';
-  lastSyncedAt: string;
+export interface ShaderApiConfig {
+  endpointUrl: string;
+  useCustomApi: boolean;
+  connectionStatus: 'disconnected' | 'connecting' | 'connected' | 'error';
+  errorMessage?: string;
 }
